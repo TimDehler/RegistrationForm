@@ -60,7 +60,12 @@ const submitForm = (event) => {
   }
   setErrorMessage("");
 
-  console.info("Submitted");
+  setSubmitted();
+};
+
+const setSubmitted = () => {
+  const submitbutton = document.getElementById("submitbtn");
+  submitbutton.innerHTML = "✔️";
 };
 
 const validiereVorUndZuName = () => {
