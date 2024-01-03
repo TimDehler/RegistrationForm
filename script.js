@@ -94,7 +94,8 @@ const validiereTelefonNummer = () => {
 };
 
 const validierePasswort = () => {
-  const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*0-9]).{8,}$/;
+  const passwordRegex =
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}$/;
   const passwort = document.getElementById("passwort").value;
   const vorname = document.getElementById("vorname").value;
   const nachname = document.getElementById("nachname").value;
