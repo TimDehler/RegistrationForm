@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registrierung Musterlösung</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./script.js"></script>
+  </head>
+  <body>
+    <main>
+      <div class="form-container">
+        <h1>Registrierung</h1>
+        <div class="line"></div>
+
+        <form id="registrierung" onsubmit="submitForm(event)">
+          <p class="hidden error" id="error"></p>
+
+          <label for="vorname">Vorname</label>
+          <input
+            id="vorname"
+            type="text"
+            onfocus="toggleInfo(event)"
+            onblur="toggleInfo(event)"
+          />
+          <p class="hidden information" id="vorname-info">
+            minimal 3 Zeichen / maximal 20 Zeichen
+          </p>
+
+          <label for="nachname">Nachname</label>
+          <input
+            id="nachname"
+            type="text"
+            onfocus="toggleInfo(event)"
+            onblur="toggleInfo(event)"
+          />
+          <p class="hidden information" id="nachname-info">
+            minimal 3 Zeichen / maximal 20 Zeichen
+          </p>
+
+          <label for="email">Email</label>
+          <input
+            id="email"
+            type="text"
+            onfocus="toggleInfo(event)"
+            onblur="toggleInfo(event)"
+          />
+          <p class="hidden information" id="email-info">
+            Muss ein @ enthalten und mit einem .de .com enden
+          </p>
+
+          <label for="telefon">Telefon</label>
+          <input
+            id="telefon"
+            type="number"
+            onfocus="toggleInfo(event)"
+            onblur="toggleInfo(event)"
+          />
+          <p class="hidden information" id="telefon-info">
+            Darf nur aus Ziffernbestehen und genau 15 Ziffern lang sein
+          </p>
+
+          <label for="gender">Select Gender:</label>
+          <select id="gender" name="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+
+          <label for="passwort">Passwort</label>
+          <span>
+            <input
+              class="special"
+              id="passwort"
+              type="password"
+              onfocus="toggleInfo(event)"
+              onblur="toggleInfo(event)"
+            />
+            <button
+              class="show-btn"
+              type="button"
+              onclick="showPassword(`passwort`)"
+            >
+              Show
+            </button>
+          </span>
+          <p class="hidden information" id="passwort-info">
+            Muss einen Kleinbuchstaben, Großbuchstaben, ein Sonderzeichen und
+            eine Ziffer enthalten. Darf nicht Namen oder Nachnamen enthalten.
+          </p>
+
+          <label for="w-passwort">Wiederholtes Passwort</label>
+          <span>
+            <input
+              class="special"
+              id="w-passwort"
+              type="password"
+              onfocus="toggleInfo(event)"
+              onblur="toggleInfo(event)"
+            />
+            <button
+              class="show-btn"
+              type="button"
+              onclick="showPassword(`w-passwort`)"
+            >
+              Show
+            </button>
+          </span>
+          <p class="hidden information" id="w-passwort-info">
+            Muss exakt dem Passwort entsprechen
+          </p>
+
+          <div class="agb">
+            <div class="centered check">
+              <input id="agb" type="checkbox" />
+            </div>
+            <label for="agb"
+              >Ich habe die AGB gelesen und stimme mit den beschriebenen Rechten
+              und Pflichten überein.</label
+            >
+          </div>
+
+          <button class="submit-button" type="submit">Submit</button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>
